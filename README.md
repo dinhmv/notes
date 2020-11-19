@@ -4,6 +4,12 @@
 
 Để sử dụng api sau khi login không cần Token thì trong config/session
 chuyển `'same_site' => 'lax',` thanh `'same_site' => null,`
+add
+```
+\App\Http\Middleware\EncryptCookies::class,
+\Illuminate\Session\Middleware\StartSession::class,
+```
+to api in Kernel.php
 
 ## 2. Vấn đề khi chuyển hướng tới trang login khi sử dụng osiset/laravel-shopify
 
